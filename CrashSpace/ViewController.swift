@@ -59,6 +59,14 @@ class ViewController: UIViewController {
     /*
      Quick function to load a url into the main webview
      */
+    func escape(originalString: String) -> String? {
+        if let escapedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
+            print(" \(escapedString)")
+            return escapedString
+        } else {
+            return nil
+        }
+    }
     
     func loadWebView(_ urlParameters: String){
         let requestURL = URL(string:testurl)
@@ -87,17 +95,19 @@ class ViewController: UIViewController {
      */
     
     @IBAction func checkIn(_ sender: AnyObject) {
-        var userText = NSString()
-        var messageText = NSString()
+        var userText = String()
+        var messageText = String()
         
         if(user.text != nil){
-            userText = user.text! as NSString
+            let entry = user.text! as String
+            userText = escape(originalString: entry)!
         }
         else{
             userText = "iostestuser"
         }
         if(message.text != nil){
-            messageText = message.text! as NSString
+            let entry = message.text! as String
+            messageText = escape(originalString: entry)!
         }
         else{
             messageText = "test"

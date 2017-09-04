@@ -11,7 +11,7 @@ import Foundation
 
 class Settings {
     
-    var version : String = "v1.00"
+    var version : String = "v1.01"
         
     public static var userName: String? {
         get {
