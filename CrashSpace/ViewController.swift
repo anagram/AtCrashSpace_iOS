@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    var userDefaults = NSUserDefaults.standardUserDefaults()
+    var userDefaults = UserDefaults.standard
     
     
 
@@ -29,14 +29,14 @@ class ViewController: UIViewController {
     /*
         Function to update screen with the freshest web data
     */
-    @IBAction func refreshWeb(sender: AnyObject) {
+    @IBAction func refreshWeb(_ sender: AnyObject) {
        self.loadWebView("")
     }
     
     /*
         Update the slider value's label to reflect where the slider is currently positioned
     */
-    @IBAction func sliderValueChanged(sender: UISlider) {
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
         
         let currentValue = Int(sender.value)
         
@@ -47,9 +47,9 @@ class ViewController: UIViewController {
         Quick function to load a url into the main webview
     */
     
-    func loadWebView(urlParameters: String){
-        let requestURL = NSURL(string:url)
-        let request = NSURLRequest(URL: requestURL!)
+    func loadWebView(_ urlParameters: String){
+        let requestURL = URL(string:url)
+        let request = URLRequest(url: requestURL!)
         webView.loadRequest(request)
     }
     /*
@@ -61,10 +61,10 @@ class ViewController: UIViewController {
         
         // Loads the user and message to local memory from past load.
         // needs to be fixed to work correctly
-        if let userText: AnyObject = userDefaults.valueForKey("userName") {
+        if let userText: AnyObject = userDefaults.value(forKey: "userName") as AnyObject {
             user.text = userText.string
         }
-        if let messageText: AnyObject = userDefaults.valueForKey("message") {
+        if let messageText: AnyObject = userDefaults.value(forKey: "message") as AnyObject {
             message.text = messageText.string
         }
 
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     /*
         On reappear of the screen, update the webview
     */
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.loadWebView("")
     }
     override func didReceiveMemoryWarning() {
@@ -90,26 +90,26 @@ class ViewController: UIViewController {
      *
      */
 
-    @IBAction func checkIn(sender: AnyObject) {
+    @IBAction func checkIn(_ sender: AnyObject) {
         var userText = NSString()
         var messageText = NSString()
         
         if(user.text != nil){
-            userText = user.text!
+            userText = user.text! as NSString
         }
         else{
             userText = " "
         }
         if(message.text != nil){
-            messageText = message.text!
+            messageText = message.text! as NSString
         }
         else{
             messageText = " "
         }
         let urlString =  "\(url)?id=\(userText)&msg=\(messageText)&type=iOS&diff_mins_max=\(sliderMins.text!)&debug=1"
         
-        let requestURL = NSURL(string:urlString)
-        let request = NSURLRequest(URL: requestURL!)
+        let requestURL = URL(string:urlString)
+        let request = URLRequest(url: requestURL!)
         webView.loadRequest(request)
         
         
