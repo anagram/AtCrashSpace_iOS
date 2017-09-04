@@ -11,7 +11,6 @@ import Foundation
 
 class Settings {
     
-    
     var version : String = "v1.00"
         
     public static var userName: String? {
@@ -23,7 +22,7 @@ class Settings {
             return nil
         }
         set(newValue) {
-            print("saving userName \(String(describing: newValue))")
+            //print("saving userName \(String(describing: newValue))")
             UserDefaults.standard.set(newValue, forKey: "userName")
             UserDefaults.standard.synchronize()
         }
@@ -38,12 +37,11 @@ class Settings {
             return nil
         }
         set(newValue) {
-            print("saving message \(String(describing: newValue))")
+            //print("saving message \(String(describing: newValue))")
             UserDefaults.standard.set(newValue, forKey: "message")
             UserDefaults.standard.synchronize()
         }
     }
-    
     
     let defaults = UserDefaults.standard
     
@@ -53,8 +51,7 @@ class Settings {
     }
     
     
-    // MARK: - User Defaults Initial values when app is first run:
-    
+    // MARK: - This sets up User Defaults Initial values when app is first run:
     func registerDefaults() {
         
         defaults.register(defaults: [

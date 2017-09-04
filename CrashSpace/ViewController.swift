@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     var userDefaults = UserDefaults.standard
     
     var settings : Settings = Settings()
@@ -28,32 +27,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var message: UITextField!
     
 
-    /*
-     Quick function to load a url into the main webview
-     */
-    
-    func loadWebView(_ urlParameters: String){
-        let requestURL = URL(string:url)
-        let request = URLRequest(url: requestURL!)
-        webView.loadRequest(request)
-    }
+    // MARK: - Life Cycle
     
     /*
      load up the webView with the crashspace URL
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Loads the user and message to local memory from past load.
-        // needs to be fixed to work correctly
-        //        if let userText: AnyObject = userDefaults.value(forKey: "userName") as AnyObject {
-        //            user.text = userText.string
-        //        }
-        //        if let messageText: AnyObject = userDefaults.value(forKey: "message") as AnyObject {
-        //            message.text = messageText.string
-        //        }
-        
         
         // load user and message from Settings (User Defaults)
         loadSettings()
@@ -62,20 +42,6 @@ class ViewController: UIViewController {
         self.loadWebView("")
     }
     
-    /**
-     load user and message from Settings (User Defaults)
-     */
-    func loadSettings() {
-                if let userText = Settings.userName {
-            user.text = userText
-        }
-        if let messageText = Settings.message {
-            message.text = messageText
-        }
-    }
-    
-    
-    // MARK: - Life Cycle
     /*
      On reappear of the screen, update the webview
      */
@@ -88,9 +54,32 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    // MARK: - UI Actions
+    // MARK: - Helper functions
     /*
+     Quick function to load a url into the main webview
+     */
+    
+    func loadWebView(_ urlParameters: String){
+        let requestURL = URL(string:url)
+        let request = URLRequest(url: requestURL!)
+        webView.loadRequest(request)
+    }
+    
+    /*
+     load user and message from Settings (User Defaults)
+     */
+    func loadSettings() {
+        if let userText = Settings.userName {
+            user.text = userText
+        }
+        if let messageText = Settings.message {
+            message.text = messageText
+        }
+    }
+    
+
+    // MARK: - UI Actions
+    /**
      * Send request to the big button
      *   url format: http://crashspacela.com/sign/?id=Kevin&msg=test!&type=iOS&diff_mins_max=1
      *
@@ -140,7 +129,6 @@ class ViewController: UIViewController {
     @IBAction func refreshWeb(_ sender: AnyObject) {
         // we can now update our settings without sending checkin to web page (for testing mostly)
         saveSettings()
-        
         self.loadWebView("")
     }
     
