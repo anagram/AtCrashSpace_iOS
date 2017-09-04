@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     var userDefaults = UserDefaults.standard
     
+    var settings = Settings()
     
 
     // Url to get the current status
@@ -98,13 +99,13 @@ class ViewController: UIViewController {
             userText = user.text! as NSString
         }
         else{
-            userText = " "
+            userText = "ios test user"
         }
         if(message.text != nil){
             messageText = message.text! as NSString
         }
         else{
-            messageText = " "
+            messageText = "test!"
         }
         let urlString =  "\(url)?id=\(userText)&msg=\(messageText)&type=iOS&diff_mins_max=\(sliderMins.text!)&debug=1"
         

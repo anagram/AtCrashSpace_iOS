@@ -12,6 +12,8 @@
 		2430D0FF1BCB37BB00B2B188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2430D0FD1BCB37BB00B2B188 /* Main.storyboard */; };
 		2430D1011BCB37BB00B2B188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2430D1001BCB37BB00B2B188 /* Assets.xcassets */; };
 		2430D1041BCB37BB00B2B188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2430D1021BCB37BB00B2B188 /* LaunchScreen.storyboard */; };
+		8FB7E2301F5DC44800EC2115 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7E22F1F5DC44800EC2115 /* Media.xcassets */; };
+		8FB7E2321F5DC91B00EC2115 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB7E2311F5DC91B00EC2115 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2430D1001BCB37BB00B2B188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2430D1031BCB37BB00B2B188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2430D1051BCB37BB00B2B188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FB7E22F1F5DC44800EC2115 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		8FB7E2311F5DC91B00EC2115 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,11 @@
 				2430D0F91BCB37BB00B2B188 /* AppDelegate.swift */,
 				2430D0FB1BCB37BB00B2B188 /* ViewController.swift */,
 				2430D0FD1BCB37BB00B2B188 /* Main.storyboard */,
+				8FB7E22F1F5DC44800EC2115 /* Media.xcassets */,
 				2430D1001BCB37BB00B2B188 /* Assets.xcassets */,
 				2430D1021BCB37BB00B2B188 /* LaunchScreen.storyboard */,
 				2430D1051BCB37BB00B2B188 /* Info.plist */,
+				8FB7E2311F5DC91B00EC2115 /* Settings.swift */,
 			);
 			path = CrashSpace;
 			sourceTree = "<group>";
@@ -91,10 +97,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = NetKruzer;
+				ORGANIZATIONNAME = anagramfx;
 				TargetAttributes = {
 					2430D0F51BCB37BB00B2B188 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 5MWZQ4W4UQ;
 						LastSwiftMigration = 0830;
 					};
 				};
@@ -124,6 +131,7 @@
 			files = (
 				2430D1041BCB37BB00B2B188 /* LaunchScreen.storyboard in Resources */,
 				2430D1011BCB37BB00B2B188 /* Assets.xcassets in Resources */,
+				8FB7E2301F5DC44800EC2115 /* Media.xcassets in Resources */,
 				2430D0FF1BCB37BB00B2B188 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB7E2321F5DC91B00EC2115 /* Settings.swift in Sources */,
 				2430D0FC1BCB37BB00B2B188 /* ViewController.swift in Sources */,
 				2430D0FA1BCB37BB00B2B188 /* AppDelegate.swift in Sources */,
 			);
@@ -249,9 +258,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5MWZQ4W4UQ;
 				INFOPLIST_FILE = CrashSpace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.netkruzer.crashspace;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anagramfx.crashspace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -261,9 +271,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5MWZQ4W4UQ;
 				INFOPLIST_FILE = CrashSpace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.netkruzer.crashspace;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anagramfx.crashspace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
