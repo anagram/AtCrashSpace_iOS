@@ -22,6 +22,7 @@
 		2430D0FE1BCB37BB00B2B188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2430D1031BCB37BB00B2B188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2430D1051BCB37BB00B2B188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F79EA4A1F5DDE490069D051 /* Notes_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes_readme.txt; sourceTree = "<group>"; };
 		8FB7E22F1F5DC44800EC2115 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		8FB7E2311F5DC91B00EC2115 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +64,7 @@
 				2430D1021BCB37BB00B2B188 /* LaunchScreen.storyboard */,
 				2430D1051BCB37BB00B2B188 /* Info.plist */,
 				8FB7E2311F5DC91B00EC2115 /* Settings.swift */,
+				8F79EA4A1F5DDE490069D051 /* Notes_readme.txt */,
 			);
 			path = CrashSpace;
 			sourceTree = "<group>";
