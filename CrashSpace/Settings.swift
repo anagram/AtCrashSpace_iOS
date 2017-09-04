@@ -55,7 +55,7 @@ class Settings {
         
         defaults.register(defaults: [
             "userName": "iostestuser",
-            "message": "iostest!"
+            "message": "iostest"
             ])
         
     }
