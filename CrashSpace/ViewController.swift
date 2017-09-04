@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     // Url to get the current status
     // and to send updates to
     //let url = "https://crashspacela.com/sign/"
-    let testurl = "https://crashspacela.com/sign-tst/?debug=true"
+    let testurl = "https://crashspacela.com/sign-tst/?debug=true"  // careful, only one ? mark!
     @IBOutlet weak var slider: UISlider!
     
     // variables that connect to items on the storyboard
@@ -94,26 +94,30 @@ class ViewController: UIViewController {
             userText = user.text! as NSString
         }
         else{
-            userText = "ios test user"
+            userText = "iostestuser"
         }
         if(message.text != nil){
             messageText = message.text! as NSString
         }
         else{
-            messageText = "test!"
+            messageText = "test"
         }
         
         // Save the user and message to User Defaults for next load.
         saveSettings()
         
-        let urlString =  "\(testurl)?id=\(userText)&msg=\(messageText)&type=iOS&diff_mins_max=\(sliderMins.text!)"    //&debug=1"
+        let urlString =  "\(testurl)&id=\(userText)&msg=\(messageText)&type=iOS&diff_mins_max=\(sliderMins.text!)"    //&debug=1"
+        //let urlString =  "\(url)?id=\(userText)&msg=\(messageText)&type=iOS&diff_mins_max=\(sliderMins.text!)&debug=1"
+
         print("this is an url string? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \(urlString)")
+        // https://crashspacela.com/sign-tst/?debug=true&id=iostestuser&msg=iostest&type=iOS&diff_mins_max=2
+        
         
         if let requestURL = URL(string:urlString) {
             let request = URLRequest(url: requestURL)
             webView.loadRequest(request)
         } else {
-            // webView.loadRequest((URL: NSURL(string: "google.ca")! as URL)
+            
             print("problem with requestURL!!!")
         }
 
