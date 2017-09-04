@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     
     var userDefaults = UserDefaults.standard
     
-    var settings = Settings()
+    var settings : Settings = Settings()
     
-
+    
     // Url to get the current status
     // and to send updates to
     let url = "https://crashspacela.com/sign/"
@@ -27,70 +27,75 @@ class ViewController: UIViewController {
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var message: UITextField!
     
+
     /*
-        Function to update screen with the freshest web data
-    */
-    @IBAction func refreshWeb(_ sender: AnyObject) {
-       self.loadWebView("")
-    }
-    
-    /*
-        Update the slider value's label to reflect where the slider is currently positioned
-    */
-    @IBAction func sliderValueChanged(_ sender: UISlider) {
-        
-        let currentValue = Int(sender.value)
-        
-        sliderMins.text = "\(currentValue)"
-    }
-    
-    /*
-        Quick function to load a url into the main webview
-    */
+     Quick function to load a url into the main webview
+     */
     
     func loadWebView(_ urlParameters: String){
         let requestURL = URL(string:url)
         let request = URLRequest(url: requestURL!)
         webView.loadRequest(request)
     }
+    
     /*
-        load up the webView with the crashspace URL
-    */
+     load up the webView with the crashspace URL
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         // Loads the user and message to local memory from past load.
         // needs to be fixed to work correctly
-        if let userText: AnyObject = userDefaults.value(forKey: "userName") as AnyObject {
-            user.text = userText.string
-        }
-        if let messageText: AnyObject = userDefaults.value(forKey: "message") as AnyObject {
-            message.text = messageText.string
-        }
-
+        //        if let userText: AnyObject = userDefaults.value(forKey: "userName") as AnyObject {
+        //            user.text = userText.string
+        //        }
+        //        if let messageText: AnyObject = userDefaults.value(forKey: "message") as AnyObject {
+        //            message.text = messageText.string
+        //        }
         
+        
+        // load user and message from Settings (User Defaults)
+        loadSettings()
         
         //call the updateWebView url
         self.loadWebView("")
     }
+    
+    /**
+     load user and message from Settings (User Defaults)
+     */
+    func loadSettings() {
+                if let userText = Settings.userName {
+            user.text = userText
+        }
+        if let messageText = Settings.message {
+            message.text = messageText
+        }
+    }
+    
+    
+    // MARK: - Life Cycle
     /*
-        On reappear of the screen, update the webview
-    */
+     On reappear of the screen, update the webview
+     */
     override func viewDidAppear(_ animated: Bool) {
         self.loadWebView("")
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
+    
+    
+    // MARK: - UI Actions
     /*
      * Send request to the big button
      *   url format: http://crashspacela.com/sign/?id=Kevin&msg=test!&type=iOS&diff_mins_max=1
      *
      */
-
+    
     @IBAction func checkIn(_ sender: AnyObject) {
         var userText = NSString()
         var messageText = NSString()
@@ -113,21 +118,42 @@ class ViewController: UIViewController {
         let request = URLRequest(url: requestURL!)
         webView.loadRequest(request)
         
+        // Save the user and message to User Defaults for next load.
+        saveSettings()
         
-        // Save the user and message to local memory for next load.
-        // needs to be fixed to work correctly
+    }
+    
+    func saveSettings() {
         if(user.text != nil){
-            userDefaults.setValue(user.text, forKey: "userName")
-            userDefaults.synchronize()
+            Settings.userName = user.text
         }
         
         if(message.text != nil){
-            userDefaults.setValue(message.text, forKey: "message")
-            userDefaults.synchronize()
+            Settings.message = message.text
         }
     }
     
     
-
+    /*
+     Function to update screen with the freshest web data
+     */
+    @IBAction func refreshWeb(_ sender: AnyObject) {
+        // we can now update our settings without sending checkin to web page (for testing mostly)
+        saveSettings()
+        
+        self.loadWebView("")
+    }
+    
+    /*
+     Update the slider value's label to reflect where the slider is currently positioned
+     */
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        
+        let currentValue = Int(sender.value)
+        sliderMins.text = "\(currentValue)"
+    }
+    
+    
+    
 }
 
