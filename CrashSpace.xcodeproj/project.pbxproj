@@ -10,7 +10,6 @@
 		2430D0FA1BCB37BB00B2B188 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430D0F91BCB37BB00B2B188 /* AppDelegate.swift */; };
 		2430D0FC1BCB37BB00B2B188 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430D0FB1BCB37BB00B2B188 /* ViewController.swift */; };
 		2430D0FF1BCB37BB00B2B188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2430D0FD1BCB37BB00B2B188 /* Main.storyboard */; };
-		2430D1011BCB37BB00B2B188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2430D1001BCB37BB00B2B188 /* Assets.xcassets */; };
 		2430D1041BCB37BB00B2B188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2430D1021BCB37BB00B2B188 /* LaunchScreen.storyboard */; };
 		8FB7E2301F5DC44800EC2115 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7E22F1F5DC44800EC2115 /* Media.xcassets */; };
 		8FB7E2321F5DC91B00EC2115 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB7E2311F5DC91B00EC2115 /* Settings.swift */; };
@@ -21,7 +20,6 @@
 		2430D0F91BCB37BB00B2B188 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2430D0FB1BCB37BB00B2B188 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2430D0FE1BCB37BB00B2B188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2430D1001BCB37BB00B2B188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2430D1031BCB37BB00B2B188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2430D1051BCB37BB00B2B188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FB7E22F1F5DC44800EC2115 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 				2430D0FB1BCB37BB00B2B188 /* ViewController.swift */,
 				2430D0FD1BCB37BB00B2B188 /* Main.storyboard */,
 				8FB7E22F1F5DC44800EC2115 /* Media.xcassets */,
-				2430D1001BCB37BB00B2B188 /* Assets.xcassets */,
 				2430D1021BCB37BB00B2B188 /* LaunchScreen.storyboard */,
 				2430D1051BCB37BB00B2B188 /* Info.plist */,
 				8FB7E2311F5DC91B00EC2115 /* Settings.swift */,
@@ -96,7 +93,7 @@
 		2430D0EE1BCB37BB00B2B188 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = anagramfx;
 				TargetAttributes = {
 					2430D0F51BCB37BB00B2B188 = {
@@ -130,7 +127,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2430D1041BCB37BB00B2B188 /* LaunchScreen.storyboard in Resources */,
-				2430D1011BCB37BB00B2B188 /* Assets.xcassets in Resources */,
 				8FB7E2301F5DC44800EC2115 /* Media.xcassets in Resources */,
 				2430D0FF1BCB37BB00B2B188 /* Main.storyboard in Resources */,
 			);
@@ -184,8 +180,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -229,8 +227,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -249,6 +249,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
