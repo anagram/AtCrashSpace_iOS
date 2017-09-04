@@ -16,8 +16,8 @@ class Settings {
     public static var userName: String? {
         get {
             if let theValue = UserDefaults.standard.string(forKey: "userName"){
-                print("returning topic  \(theValue)")
-                return UserDefaults.standard.string(forKey: "userName")!
+                //print("returning topic  \(theValue)")
+                return theValue
             }
             return nil
         }
@@ -32,8 +32,7 @@ class Settings {
         get {
             if let theValue = UserDefaults.standard.string(forKey: "message"){
                 print("returning message  \(theValue)")
-                return UserDefaults.standard.string(forKey: "message")!
-            }
+                return theValue            }
             return nil
         }
         set(newValue) {
@@ -46,7 +45,7 @@ class Settings {
     let defaults = UserDefaults.standard
     
     init() {
-        print("called init of Settings class")
+        //print("called init of Settings class")
         registerDefaults()
     }
     
@@ -55,8 +54,8 @@ class Settings {
     func registerDefaults() {
         
         defaults.register(defaults: [
-            "userName": "ios test user",
-            "message": "ios test!"
+            "userName": "iostestuser",
+            "message": "iostest!"
             ])
         
     }
